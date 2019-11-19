@@ -1,5 +1,5 @@
 language: swift
-osx_image: xcode10.1
+osx_image: xcode11
 env:
   global:
   - FRAMEWORK_NAME=AWSAppSync
@@ -16,11 +16,11 @@ before_deploy:
 - carthage build --no-skip-current
 - carthage archive $FRAMEWORK_NAME
 script:
-- xcodebuild -workspace AWSAppSyncClient.xcworkspace -scheme AWSAppSync build test -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
+- xcodebuild -quiet -workspace AWSAppSyncClient.xcworkspace -scheme AWSAppSync build test -destination 'platform=iOS Simulator,name=iPhone 11,OS=latest'
 deploy:
 - provider: releases
   api_key:
-    secure: grQ0iwgJczU2OQuoXM4TkYrWtPBEwaG5WSPwtQ4OeNJT/S9u/NsB8UWlkqr7w0dzgJhZC0rYX8qDHT8UH8LoGUYPvtORBz+0ktoOFxGHR1Xf7diEKrsDFYJ0Tou7zrgLzzVEY3t+vlLZAmd8POavQsfNKWx5xeOvsmfJgHSuJic1eAaH6R9LsJgXnqhiUF6DT2nDdFEy2cDYL8fro98WXoek7Z+fG4nx5oJQSOmhiNmdSIcTcFMFWJ9TFMlsNJom6pMDJR6FL1AgCz3/zSvYW4ZNpkq1WIQjIJAidiKEPue0tmVPwXvP5fmOsGTneu72O/uSyIoTdkPnt0QZXFofA+g4ScwhI8GQNPjF4muUrJauOVzInExm/RS1gI4Z5AwLV/DDouNtyMRIuCjCr/cPUpzllUyWTguTl7YVyt0/rK7QjCVX4U46N1QSmXNpP6Qa8EWQam5MMi0bcTa0drjNMqPaRjRP+F0O/x9wnbSfJElRueSexw5Uvn/+nh0upxo6kbIttVHZRjJuw5mN0iiEUIdL08nem9BWRLjg/hA1t6Lo94QCHu6BGeHi5AyddTFmiM0vsMnnNNSKB+q1RSMCCqMMjGtcGZJw5YtZybcn5AvIrhPjGLcMOpSPQ2BTWToKMHKlkzefaF0e9gPbC4PDBGIAVEqx8qKkUqDsCuSZb60=
+    secure: "uUcRy8hCxfynHvYXMK9R3CLbK2b1WZA6d1vNjpkLCk28RaUf8gyJ4A7cCbkKzGBjt1D5yuZj3z8oFokwPA5L7RZ3evHHzfZiWpepCLexbs1L9qFpww2O+/MGckRroGE0dN+ij3MaXQlsNe32hjTXtCTw3MV0zg0BcShxFryj0xjkFP1BTUngpbYPmCSoB8JwMMvhn3Besxdywt83Tg3QvZUNXcPPs3PVv9BG364ofG6mJH0oqSMX8U4Kxz8CeU11Web1b0yULQhSHfz5aHToGiKTtplkVvCpCCpIH2mP2nNSKvbzYx/+gCbNyjXOKQxW7Tvx6/m3lqnfyvqdtvzFoapOYnJ8jsFUi/1+5hZJeDV/oUa4cWpgd/T8WufuP+1XGGl+9gopjEtveW7XDYONQvy77NUGAFw9+H1qpjZ94hbD2S2h8gYcruzMjhd7XcFLxV2ohRA2WIb7B5fovTblUCU894M0DvvDhicgLynckMfS4ARbLVjg4qooW0ErmedN2RbqU8SgDbM3eMfZ9rhMWCgaLP/YgnCCw3eVs5Qbu/rr2UwYv0KGtA0WNcHUHve1JTTj0cdlOMS6frhvA9OxuPaAhwmrpiz2wicfz/LUmr4elhJH8rgxqV+rzed1Ya/2UdzjD8b+o61iszaWrwQYb0MT2WUILuaSDC621aIQImM="
   file: "$FRAMEWORK_NAME.framework.zip"
   skip_cleanup: true
   on:

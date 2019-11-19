@@ -38,6 +38,11 @@ Resources:
     Properties:
       Name: !Sub ${ResourceNamePrefix}-${AuthType}
       AuthenticationType: !If [AuthTypeIsAPIKey, API_KEY, AWS_IAM]
+      AdditionalAuthenticationProviders:
+        - !If 
+          - AuthTypeIsIAM
+          - AuthenticationType: "API_KEY"
+          - !Ref AWS::NoValue
 
   GraphQLSchema:
     Type: "AWS::AppSync::GraphQLSchema"
@@ -131,12 +136,12 @@ Resources:
           testMutationWithoutParameters: Boolean
         }
 
-        type Post {
+        type Post @aws_iam @aws_api_key {
           id: ID!
           author: String!
           title: String!
           content: String!
-          url: AWSURL
+          url: AWSURL @aws_iam
           ups: Int!
           downs: Int!
           file: S3Object
@@ -145,7 +150,7 @@ Resources:
         }
 
         type Query {
-          getPost(id: ID!): Post
+          getPost(id: ID!): Post @aws_iam @aws_api_key
           listPosts: [Post]
           listPostsDelta(lastSync: AWSTimestamp): [Post]
         }
@@ -208,7 +213,6 @@ Resources:
 
   AppSyncApiKey:
     Type: AWS::AppSync::ApiKey
-    Condition: AuthTypeIsAPIKey
     Properties:
       ApiId: !GetAtt GraphQLApi.ApiId
       # Hardcoded, since we don't have an easy way of deriving
@@ -1241,9 +1245,11 @@ Outputs:
     Value: !Ref AWS::Region
 
   BucketName:
+    Condition: AuthTypeIsIAM
     Value: !Ref S3Bucket
     Description: Bucket name for the S3 bucket.  This value should be included in your appsync_test_credentials.json file.
   BucketRegion:
+    Condition: AuthTypeIsIAM
     Description: The AWS Region of the S3 bucket. This value should be included in your appsync_test_credentials.json file.
     Value: !Ref AWS::Region
 
@@ -1255,7 +1261,10 @@ Outputs:
     Condition: AuthTypeIsIAM
     Description: The role created to allow authenticated users to connect to the AppSync API.
     Value: !GetAtt AppSyncAuthenticatedRole.Arn
-
+  AppSyncMultiAuthAPIKey:
+    Condition: AuthTypeIsIAM
+    Description: The API Key to authenticate with the AppSync API using multi auth. This value should be included in your appsync_test_credentials.json file.
+    Value: !GetAtt AppSyncApiKey.ApiKey
   # General values (not used in appsync_test_credentials.json, but useful for reference)
   AppSyncApiId:
     Description: The ID of the AppSync API, useful for code generation with `amplify codegen --apiId <id>`

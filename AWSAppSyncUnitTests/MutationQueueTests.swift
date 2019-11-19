@@ -109,7 +109,7 @@ class MutationQueueTests: XCTestCase {
         wait(for: [delayedMutationResponseDispatched, appSyncClientReleased], timeout: Double(secondsToWait) + 1.0)
     }
 
-    func testMutationIsNotSentIfAddedWhileNoNetwork() throws {
+    func testMutationIsAttemptedIfAddedWhileNoNetwork() throws {
         let reachability = MockReachabilityProvidingFactory.instance
         try reachability.startNotifier()
         reachability.connection = .none
@@ -122,10 +122,9 @@ class MutationQueueTests: XCTestCase {
         let addPost = DefaultTestPostData.defaultCreatePostWithoutFileUsingParametersMutation
         let mockHTTPTransport = MockAWSNetworkTransport()
 
-        let sendWasNotInvoked = expectation(description: "HTTPTransport.send was not invoked while host was unreachable")
-        sendWasNotInvoked.isInverted = true
+        let sendWasInvoked = expectation(description: "HTTPTransport.send was not invoked while host was unreachable")
         let queuedResponseBlock: SendOperationResponseBlock<CreatePostWithoutFileUsingParametersMutation> = { _, _ in
-            sendWasNotInvoked.fulfill()
+            sendWasInvoked.fulfill()
         }
 
         mockHTTPTransport.sendOperationResponseQueue.append(queuedResponseBlock)
@@ -134,7 +133,7 @@ class MutationQueueTests: XCTestCase {
 
         appSyncClient.perform(mutation: addPost) { _, _ in }
 
-        wait(for: [sendWasNotInvoked], timeout: 0.5)
+        wait(for: [sendWasInvoked], timeout: 0.5)
     }
 
     func testMutationErrorDeliveredToCompletionHandler() throws {
@@ -615,6 +614,91 @@ class MutationQueueTests: XCTestCase {
         }
 
         wait(for: [mutationWasPerformed], timeout: 1.0)
+    }
+    
+    func testCancelingOfflineMutationRemovesFromQueue() throws {
+        
+        let reachability = MockReachabilityProvidingFactory.instance
+        try reachability.startNotifier()
+        reachability.connection = .none
+        
+        NetworkReachabilityNotifier.setupShared(
+            host: "http://www.amazon.com",
+            allowsCellularAccess: true,
+            reachabilityFactory: MockReachabilityProvidingFactory.self)
+        
+        let addPost = DefaultTestPostData.defaultCreatePostWithoutFileUsingParametersMutation
+        let mockHTTPTransport = MockAWSNetworkTransport()
+        
+        let persistentCache = try AWSMutationCache(fileURL: cacheConfiguration.offlineMutations!)
+        let n0 = try persistentCache.getStoredMutationRecordsInQueue().await().count
+        let appSyncClient = try UnitTestHelpers.makeAppSyncClient(using: mockHTTPTransport, cacheConfiguration: cacheConfiguration)
+        let cancellable = appSyncClient.perform(mutation: addPost) { _, _ in }
+        let n1 = try persistentCache.getStoredMutationRecordsInQueue().await().count
+        XCTAssertEqual(n0, n1 - 1 )
+        cancellable.cancel()
+        let n2 = try persistentCache.getStoredMutationRecordsInQueue().await().count
+        XCTAssertEqual(n0, n2)
+    }
+
+    /// This test asserts two behaviors:
+    ///
+    /// Test 1
+    /// - Given: A queue of in-process mutations
+    /// - When: I invoke `clearCaches` with the option set to clear the mutation queue
+    /// - Then: The mutation queue is emptied
+    ///
+    /// Test 2
+    /// - Given: A queue of in-process mutations
+    /// - When: I clear the cache, then perform another mutation
+    /// - Then: The new mutation is performed as expected
+    func testCancelAllMutations() throws {
+        // Test 1, which is also setup for Test 2
+        let addPost = DefaultTestPostData.defaultCreatePostWithoutFileUsingParametersMutation
+
+        let mockHTTPTransport = MockAWSNetworkTransport()
+        mockHTTPTransport.operationResponseDelay = 2
+        mockHTTPTransport.sendOperationHandlerResponseBody = UnitTestHelpers.makeAddPostResponseBody(withId: "TestPostID", for: addPost)
+
+        let appSyncClient = try UnitTestHelpers.makeAppSyncClient(using: mockHTTPTransport, cacheConfiguration: AWSAppSyncCacheConfiguration())
+
+        var mutationExpectations = [XCTestExpectation]()
+
+        // The first mutation will begin immediately, but since the mock HTTP transport has a 2 second delay, we'll have
+        // time to queue up more mutations behind it, which we will then cancel.
+        let mutationPerformed = expectation(description: "Post added")
+        mutationExpectations.append(mutationPerformed)
+        appSyncClient.perform(mutation: addPost) { result, error in
+            XCTAssertEqual(result?.data?.createPostWithoutFileUsingParameters?.id, "TestPostID")
+            mutationPerformed.fulfill()
+        }
+
+
+        for i in 0...9 {
+            let queuedMutationShouldNotBeInvoked = expectation(description: "Queued mutation \(i) should not be invoked")
+            queuedMutationShouldNotBeInvoked.isInverted = true
+            mutationExpectations.append(queuedMutationShouldNotBeInvoked)
+            appSyncClient.perform(mutation: addPost) { result, error in
+                queuedMutationShouldNotBeInvoked.fulfill()
+            }
+        }
+
+        try appSyncClient.clearCaches(options: ClearCacheOptions(clearMutations: true))
+
+        wait(for: mutationExpectations, timeout: 3.0)
+
+        XCTAssertEqual(appSyncClient.queuedMutationCount, 0)
+
+        mockHTTPTransport.operationResponseDelay = 0
+
+        // Test 2
+        let furtherMutationPerformed = expectation(description: "Further post added")
+        appSyncClient.perform(mutation: addPost) { result, error in
+            XCTAssertEqual(result?.data?.createPostWithoutFileUsingParameters?.id, "TestPostID")
+            furtherMutationPerformed.fulfill()
+        }
+
+        wait(for: [furtherMutationPerformed], timeout: 1.0)
     }
 
     // MARK: - Utility methods

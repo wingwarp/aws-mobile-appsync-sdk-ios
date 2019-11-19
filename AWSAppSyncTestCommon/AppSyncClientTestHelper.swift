@@ -44,9 +44,12 @@ public class AppSyncClientTestHelper: NSObject {
     public enum AuthenticationType {
         case apiKey
         case cognitoIdentityPools
+        case apiKeyWithIAMEndpoint
         case invalidAPIKey
         case invalidOIDC
         case invalidStaticCredentials
+        /// Delay set at 120 seconds
+        case delayedInvalidOIDC
     }
 
     static let testSetupErrorMessage = """
@@ -60,7 +63,10 @@ public class AppSyncClientTestHelper: NSObject {
        "CognitoIdentityPoolRegion": "us-east-1",
        "AppSyncEndpointAPIKey": "https://apikeybasedendpoint.appsync-api.us-east-1.amazonaws.com/graphql",
        "AppSyncEndpointAPIKeyRegion": "us-east-1",
-       "AppSyncAPIKey": "da2-sad3lkh23422"
+       "AppSyncAPIKey": "da2-sad3lkh23422",
+       "BucketName": "appsynctest201804100630-iam-s3bucket-abcdefghijk",
+       "BucketRegion": "us-east-1",
+       "AppSyncMultiAuthAPIKey": "da2-sd34s5ffxz"
     }
 
     The test uses 2 different backend setups (one for IAM (Cognito Identity) auth, and one for API Key
@@ -93,7 +99,8 @@ public class AppSyncClientTestHelper: NSObject {
          httpTransport: AWSNetworkTransport? = nil,
          s3ObjectManager: AWSS3ObjectManager? = nil,
          testBundle: Bundle = Bundle(for: AppSyncClientTestHelper.self),
-         reachabilityFactory: NetworkReachabilityProvidingFactory.Type? = nil) throws {
+         reachabilityFactory: NetworkReachabilityProvidingFactory.Type? = nil,
+         subscriptionFactory: SubscriptionConnectionFactory? = nil) throws {
 
         // Read credentials from appsync_test_credentials.json or hardcoded values
         let resolvedTestConfiguration = testConfiguration ?? AppSyncClientTestConfiguration(with: testBundle) ?? AppSyncClientTestConfiguration()
@@ -109,7 +116,8 @@ public class AppSyncClientTestHelper: NSObject {
             testConfiguration: resolvedTestConfiguration,
             cacheConfiguration: cacheConfiguration,
             httpTransport: httpTransport,
-            s3ObjectManager: s3ObjectManager
+            s3ObjectManager: s3ObjectManager,
+            subscriptionFactory: subscriptionFactory
         )
 
         appSyncClient = try DeinitNotifiableAppSyncClient(appSyncConfig: appSyncConfig, reachabilityFactory: reachabilityFactory)
@@ -133,7 +141,8 @@ public class AppSyncClientTestHelper: NSObject {
         testConfiguration: AppSyncClientTestConfiguration,
         cacheConfiguration: AWSAppSyncCacheConfiguration?,
         httpTransport: AWSNetworkTransport?,
-        s3ObjectManager: AWSS3ObjectManager?
+        s3ObjectManager: AWSS3ObjectManager?,
+        subscriptionFactory: SubscriptionConnectionFactory?
     ) throws -> AWSAppSyncClientConfiguration {
 
         if let httpTransport = httpTransport {
@@ -142,6 +151,7 @@ public class AppSyncClientTestHelper: NSObject {
                                                               networkTransport: httpTransport,
                                                               cacheConfiguration: cacheConfiguration,
                                                               s3ObjectManager: s3ObjectManager)
+            appSyncConfig.subscriptionConnectionFactory = subscriptionFactory
             return appSyncConfig
         }
 
@@ -152,6 +162,16 @@ public class AppSyncClientTestHelper: NSObject {
             appSyncConfig = try AWSAppSyncClientConfiguration(
                 url: testConfiguration.apiKeyEndpointURL,
                 serviceRegion: testConfiguration.apiKeyEndpointRegion,
+                apiKeyAuthProvider: apiKeyAuthProvider,
+                cacheConfiguration: cacheConfiguration,
+                s3ObjectManager: s3ObjectManager
+            )
+
+        case .apiKeyWithIAMEndpoint:
+            let apiKeyAuthProvider = MockAWSAPIKeyAuthProviderForIAMEndpoint(with: testConfiguration)
+            appSyncConfig = try AWSAppSyncClientConfiguration(
+                url: testConfiguration.cognitoPoolEndpointURL,
+                serviceRegion: testConfiguration.cognitoPoolEndpointRegion,
                 apiKeyAuthProvider: apiKeyAuthProvider,
                 cacheConfiguration: cacheConfiguration,
                 s3ObjectManager: s3ObjectManager
@@ -186,13 +206,28 @@ public class AppSyncClientTestHelper: NSObject {
                 cacheConfiguration: cacheConfiguration,
                 s3ObjectManager: s3ObjectManager
             )
-
+            
         case .invalidStaticCredentials:
             let credentialsProvider = AWSStaticCredentialsProvider(accessKey: "INVALID_ACCESS_KEY", secretKey: "INVALID_SECRET_KEY")
             appSyncConfig = try AWSAppSyncClientConfiguration(
                 url: testConfiguration.apiKeyEndpointURL,
                 serviceRegion: testConfiguration.apiKeyEndpointRegion,
                 credentialsProvider: credentialsProvider,
+                cacheConfiguration: cacheConfiguration,
+                s3ObjectManager: s3ObjectManager
+            )
+            
+        case .delayedInvalidOIDC:
+            class DelayedCredentials : AWSOIDCAuthProvider {
+                func getLatestAuthToken() -> String {
+                    sleep(120) // Wait 2 minutes
+                    return ""
+                }
+            }
+            appSyncConfig = try AWSAppSyncClientConfiguration(
+                url: testConfiguration.apiKeyEndpointURL,
+                serviceRegion: testConfiguration.apiKeyEndpointRegion,
+                oidcAuthProvider: DelayedCredentials(),
                 cacheConfiguration: cacheConfiguration,
                 s3ObjectManager: s3ObjectManager
             )
@@ -207,7 +242,7 @@ public class AppSyncClientTestHelper: NSObject {
 struct BasicAWSCognitoCredentialsProviderFactory {
     static func makeCredentialsProvider(with configuration: AppSyncClientTestConfiguration) -> AWSCognitoCredentialsProvider {
         let credentialsProvider = AWSCognitoCredentialsProvider(
-            regionType: configuration.cognitoPoolEndpointRegion,
+            regionType: configuration.cognitoPoolRegion,
             identityPoolId: configuration.cognitoPoolId
         )
         credentialsProvider.clearCredentials()

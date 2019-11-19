@@ -1,6 +1,200 @@
 # AWS AppSync SDK for iOS - CHANGELOG
 
-The AWS AppSync SDK for iOS enables you to access your AWS AppSync backend and perform operations like `Queries`, `Mutations` and `Subscriptions`. The SDK also includes support for offline operations.
+The AWS AppSync SDK for iOS enables you to access your AWS AppSync backend and perform operations like `Queries`, `Mutations` and `Subscriptions`. The SDK
+also includes support for offline operations.
+
+## 3.0.0
+
+### General SDK improvements
+
+- * **Breaking API Changes**
+    - Added support for connecting to AWS AppSync using pure WebSockets for GraphQL subscriptions.
+        - Selection set filtering will be done per client as each client can define their own selection set. 
+ In this case the subscription selection set must be a subset of the mutation selection set. For example, 
+ a subscription `addedPost{author title}` linked to the mutation `addPost(...){id author title url version}` 
+ would receive only the author and the title of the post and none of the other fields. 
+ However, if the mutation didn't have the author in its selection set the subscriber would get a `null` 
+ value for the author field (or an error in case the author field is defined as required/not-null in the schema).
+    
+        - In the earlier SDK version, if you didn’t configure the associated subscription selection set with the required fields 
+and relied on the mutation fields to push data to subscribed client, the behavior will change when you move to this version  
+that use pure WebSockets. In the example above, a subscription without the "author" field defined in its selection set 
+would still return the author name with MQTT over WebSockets as the field is defined in the mutation, the same behavior 
+won’t apply for pure WebSockets. The subscription selection set is essential when using pure WebSockets: if a field is
+not explicitly defined in the subscription it won't be returned by AWS AppSync.
+
+- * **Breaking Build Changes**
+    - Adopted Semantic versioning
+        - Starting with version 3.0.0 AppSync AWS iOS SDK will follow [semantic versioning](https://semver.org/).
+
+### Misc. Updates
+
+- Updated Reachability dependency to 5.0.0
+
+## 2.15.0
+
+### Misc. Updates
+
+- **General SDK improvements**
+  - **Breaking Build Change** Removed deprecated APIs for
+    - `AWSAppSyncSubscriptionError`
+    - `AWSAppSyncClientError`
+    - `AWSSQLLiteNormalizedCacheError`
+    - `MutationCache`
+    - `AWSAppSyncClientConfiguration`
+    - `AWSAppSyncCacheConfiguration`
+  - **Breaking Build Change** The AWS AppSync SDK for iOS now requires Xcode 11 or above to build
+  - AppSync is now built targeting Swift 5.1
+- Updated AWS SDK dependencies to 2.12.0
+- Updated Reachability dependency to 4.3.1
+- Updated SQLite.Swift dependency to 0.12.2
+
+## 2.14.3
+
+### Bug Fixes
+
+- Fixed a bug where data less than 128 bytes would cause a crash if logging were enabled.
+  See issues [#258](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/258) and
+  [#216](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/216), and 
+  [PR #259](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/pull/259). Thanks @johnmurphy01! 🎉
+
+### Misc. Updates
+
+- Updated AWS SDK dependencies to 2.11.0
+
+## 2.14.2
+
+### Deprecated Release
+
+This release has invalid dependency declaration in the AWSAppSync.podspec. Please use release 2.14.3 instead.
+
+
+## 2.14.1
+
+### Misc. Updates
+
+- Updated AWS SDK dependencies to 2.10.2
+
+## 2.14.0
+
+### Bug Fixes
+
+* Fix a bug where delta sync was not correctly storing/ retrieving the `lastSyncTime`. See [issue #232](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/232)
+* **Breaking API Change** To fix the delta sync logic, there was a change in the hashing function used internally. This change can cause the existing app to ignore the cache for the first sync and fetch data using base query. Subsequent sync operation should work as normal.
+
+## 2.13.1
+
+### Bug Fixes
+
+* Fixed a bug where calling multiple subscriptions in a burst could result in a crash.
+
+## 2.13.0
+
+### New Features
+
+* Support multiple authorization modes for a single AWS AppSync GraphQL endpoint.
+* **Breaking API Change** Introduced `clientDatabasePrefix` in the `AWSAppSyncServiceConfigProvider` that accepts a prefix that will be used in the construction of database name for caching query responses, offline mutations and subscriptions metadata. The usage of the prefix can be enabled by the flag `useClientDatabasePrefix: true` as part of the `AWSAppSyncCacheConfiguration`. When the prefix is used, the name of the database would look as follows:
+
+  Purpose of cache | No prefix | Valid prefix
+  --- | --- | ---
+  Query responses | `queries.db` | `<ClientDatabasePrefix>_queries.db`
+  Offline Mutations | `offlineMutations.db` | `<ClientDatabasePrefix>_offlineMutations.db`
+  Subscriptions metadata for Delta Sync | `subscriptionMetadataCache.db` | `<ClientDatabasePrefix>_subscriptionMetadataCache.db`
+
+  * The `ClientDatabasePrefix` can be passed via `awsconfiguration.json` that is generated from the AWS AppSync Console and Amplify CLI.
+      ```
+       "AppSync": {
+        "Default": {
+          "ApiUrl": "https://xyz.appsync-api.us-east-2.amazonaws.com/graphql",
+          "Region": "us-east-2",
+          "AuthMode": "API_KEY",
+          "ApiKey": "da2-xyz",
+          "ClientDatabasePrefix": "MyAppSyncAPIName_API_KEY"
+        }
+      }
+      ```
+
+      The `AWSAppSyncClient` object can be constructed as follows:
+      ```swift
+      let serviceConfigAPIKey = try AWSAppSyncServiceConfig()
+      let cacheConfigAPIKey = try AWSAppSyncCacheConfiguration(useClientDatabasePrefix: true,
+                                                                  appSyncServiceConfig: serviceConfigAPIKey!)
+      let clientConfigAPIKey = try AWSAppSyncClientConfiguration(appSyncServiceConfig: serviceConfigAPIKey!,
+                                                               cacheConfiguration: cacheConfigAPIKey!)
+      let clientAPIKey = try AWSAppSyncClient(appSyncConfig: clientConfigAPIKey!)
+       ```
+* Deprecated `clearCache()` please use `clearCaches(options:)` instead. This new method will clear the query responses, offline mutations and subscriptions metadata by default and the options parameter can be used to fine-tune the operation.
+
+## 2.12.2
+
+### Bug Fixes
+
+* Fix a bug where subscriptions would be blocked from starting again after being cancelled. See [issue #249](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/249)
+
+## 2.12.1
+
+### Misc. Updates
+
+* Make network reachability provider mockable See [PR #245](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/pull/245). Thanks @gleue! 🎉
+
+### Bug Fixes
+
+* Improved internal handling of subscription cancellation and disconnect.
+  - With this update, the cancellation behavior for subscription is more robust in both cases - when developer issues `cancel` and when SDK notifies `connectionError` in the `statusChangeHandler` and `resultHandler`
+  - As a best practice, we recommend that if you do not want to receive any more callbacks on the `statusChangeHandler` and `resultHandler` for the subscription, issue a `cancel` which would immediately stop all communication to the watcher.
+  - Once `cancel` is issued, no notifications or error callbacks will be given to the watcher. If the watcher object is not reference from application code, it will internally issue a `cancel` and ensure that no callbacks are given. 
+
+## 2.12.0
+
+### Bug Fixes
+- Upgraded SQLite.swift to 0.11.6 to fix a bug in persistent cache handling.  See [issue #211](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/211). Apps
+  that declare direct dependencies on SQLite.swift must update the pods to avoid a conflict and get the fixed version. This new requires that AppSync be
+  built using Xcode 10.2 or later.
+
+### Misc. Updates
+
+* **Breaking Build Environment Changes**
+  - AppSync SDK for iOS now requires Xcode 10.2 or later to build.
+
+* Other changes
+  - Updated AWS SDK dependencies to 2.9.6
+  - Updated SQLite.swift to 0.11.6
+
+## 2.11.1
+
+### Bug Fixes
+- Fixed a bug where cancelled mutations would not be cleared from the persistent store and would be sent to service on app restart. See [issue #187](https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/187)
+
+### Misc. Updates
+- Updated AWS SDK dependencies to 2.9.5
+
+## 2.11.0
+
+### Misc. Updates
+
+**Behavior Change for Mutation Queue**
+
+- With this update, the internal operation logic of how mutations are processed is updated
+- The mutation queue in the previous SDKs, depended on notification from reachability to determine if the mutations could be sent to the service; in the new behavior we are more aligned to Apple's [Designing for Real-World Networks
+](https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/NetworkingOverview/WhyNetworkingIsHard/WhyNetworkingIsHard.html) guidance
+- The AppSync client will now `always` attempt to make a mutation request regardless of the network state
+- One the network response comes back, the SDK will inspect the error from `NSURLSession` and determine if the error was due to network not available, host not found or DNS lookup failed. If it was, the SDK will schedule a retry timer responsible to retry the request which will grow exponentially with every attempt
+- The retry handler will also watch for notification from reachability to determine if network is available again; in cases where SDK does get the notification, it will preempt the timer and make the request right away
+- If the notification is not received, the timer will continue to retry the request. The polling interval is capped at 5 minutes to ensure that attempts are made at frequent attempts while respecting resources on device
+- The mutations will retried at these intervals repeatedly until they  are successful or cancelled
+- AppSync client will ensure that it works with auth clients who return the correct errors. The AWS credential providers are validated to check if they return the correct `NSURLSession` errors so that retry can be scheduled
+- If using a custom auth client, while invoking the error callback for auth provider, it is recommended to include `NSURLErrorDomain` in the `domain` field and the indicated error code in `code` field.
+- There are no API changes required to update to this behavior
+
+## 2.10.4
+
+### New Features
+
+- The AppSyncClient now supports specifying retry strategy using the `retryStrategy` parameter in `AWSAppSyncClientConfiguration`. You can choose between `aggressive` and `exponential`(default selection).
+
+### Bug Fixes
+
+- Mark `uniqueIdentifier` field in `AWSSubscriptionWatcher` as public which was incorrectly marked private in previous version.
 
 ## 2.10.3
 
