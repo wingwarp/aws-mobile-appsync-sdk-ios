@@ -29,6 +29,9 @@ final class AWSMutationRetryAdviceHelper {
                 return isErrorURLDomainError(error: authError)
             case .requestFailed(_, _, let urlError):
                 if let urlError = urlError {
+                    if urlError.localizedDescription.contains("A data connection is not currently allowed.") {
+                        return true
+                    }
                     return isErrorURLDomainError(error: urlError)
                 }
             default:
