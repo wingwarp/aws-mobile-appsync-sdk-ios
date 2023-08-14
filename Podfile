@@ -7,7 +7,7 @@ AWS_SDK_VERSION = "2.18.0"
 
 target "AWSAppSync" do
   pod "AWSCore", "~> #{AWS_SDK_VERSION}"
-  pod "SQLite.swift", "~> 0.12.2"
+  pod "SQLite.swift", "~> 0.14.1"
   pod "ReachabilitySwift", "~> 5.0.0"
   pod "AppSyncRealTimeClient", "~> 3.1.0"
   pod "SwiftLint"
