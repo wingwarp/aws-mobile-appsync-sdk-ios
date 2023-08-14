@@ -1,5 +1,5 @@
 language: swift
-osx_image: xcode11
+osx_image: xcode12
 env:
   global:
   - FRAMEWORK_NAME=AWSAppSync
@@ -12,23 +12,23 @@ before_install:
   -d
 - brew update
 - brew outdated carthage || brew upgrade carthage
-- gem install cocoapods -v '1.8.4'
+- gem install cocoapods -v '1.9.3'
 before_deploy:
-- carthage build --no-skip-current
-- carthage archive $FRAMEWORK_NAME
+- bash ./build-support/carthage-build.sh build --no-skip-current
+- bash ./build-support/carthage-build.sh archive $FRAMEWORK_NAME
 script:
 - xcodebuild -quiet -workspace AWSAppSyncClient.xcworkspace -scheme AWSAppSync build test -destination 'platform=iOS Simulator,name=iPhone 11,OS=latest'
 deploy:
 - provider: releases
   api_key:
-    secure: "vYTABQb2THZA+BzuW0d01+NAY65KfYfPtDa765NtyOoBV0xORR/JAGtaC2g3FjwdpanrqDaiIAMBf2Ml+AEwxBF1UHotyiVzHc3Q0zMhocCkoqFaMwvukpW4MlC/FArvLNctTPebzKcDLROWYYu3/Ik0V8nVsMdMtexsCW0vxqomBwdcSUe6nEcvi80qhIJpZYfvVLftEn7DKb/MLGPIAhxZgqJSnHHcQFzozIrEgvP/lcYfPnj03/szFdOxW3ItjdkdrQD5peg9fi7N6uFJ5WsQaVToqGDAW9yzHaSWL558RKLKcPBzC82U3O5HP4mic6or7tSKohZEYrAHMZl2TmSwsSnL7LzSVrdOfPIg2ycGTjwbfhnf/ML36jjdLcNJnKGtRX84nnCy/v1L5giWr5m74FrpUq0p7noB+n8dyYJnBgjdqQgMdAZnpbAO9B/wWYxxRUHh3hl7hSs/UdoWiVkCnJlKERhJLfm4dBVP/tKqFmZXLCqJu1kwIc27ziX75ziPwEyBWKJfIHZuaUGxjwoPVFp0m9X0ixu8IDnFhi/c8WAqWCYWlhn9kF5BaPyXiU+o6DucKm37niRGTcSvCuJOXRi947LociX+GPv2MpFv5Xi80jv3y9BMsbc+PAu3nmY8jPVdLrb/WPczHtAMYITHYgpajF0hY0Vg6zBAl7g="
+    secure: "rHjLptnohHqGULz5H/ATsUlLsDslo8P93duCLt9HN/lO8dFTTu/+2jjtwyjwNEOB7RBXuwW4Hco4P9O82AXeSbdiZo4RfCNq86NgQ0DWSkKIU8o+4J1t2dOkefz0ITZRnmD7tb/HnjqVBzoOd4TxAc310nslT/qojkR3h2f5EbzgC6uVi4Svq43rICKOblR8gN7odgUoE0uzToEff4BUK784s0vgtFP1Z4oo5ynzzv1BlbEFRz/auSxHPx3LsbkEe6UkOKT655nXGTnU0shXPaqgwCWKbaHxevPLw37w6w7SYYInTYw3mQNt5G3G8HedtUaxdE3uhPPh2d0izTkD1OAp+E2SbRMem3xdmUuWSB05cKbG0ksPJ4Xr+r05t4MrnOixpRGbLDDaRiepHKiKfFFsg6c8aMGv6GQ1OCbGqgB+6Ueir23UbdEgoXFf1l6K3xX9kOwZbu9MSxIjVj8lxS70cwN73Uqo6VaPMYH6lbEgjHrAPdv231aswqSDdTmKKaKZ7M19hu/BBLp3IW+E2pwRgjqaEgMpaWJeBajFjcoUViE6S8Nu1zDf45m/h0hntUPyJ6vf4DvBMbrqdegkmLcpXb0Vv2wLH3qglHYZ06jXvHO2EBZgXYfCtj6NMsXm2BN7Pg7LXobIqocalYDdcC3HdrHBeorxoikCq1GOm6s="
   file: "$FRAMEWORK_NAME.framework.zip"
   skip_cleanup: true
   on:
    repo: awslabs/aws-mobile-appsync-sdk-ios
    tags: true
 - provider: script
-  script: bash cocoapods_release.sh
+  script: bash ./build-support/cocoapods_release.sh
   on:
     repo: awslabs/aws-mobile-appsync-sdk-ios
     tags: true

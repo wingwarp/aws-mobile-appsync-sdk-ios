@@ -20,6 +20,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAccountRecoverySettingType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"recoveryMechanisms" : @"RecoveryMechanisms",
@@ -33,6 +37,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAccountTakeoverActionType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -76,6 +84,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAccountTakeoverActionsType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"highAction" : @"HighAction",
@@ -100,6 +112,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAccountTakeoverRiskConfigurationType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"actions" : @"Actions",
@@ -119,6 +135,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAddCustomAttributesRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"customAttributes" : @"CustomAttributes",
@@ -134,9 +154,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAddCustomAttributesResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminAddUserToGroupRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -150,6 +178,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminConfirmSignUpRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"clientMetadata" : @"ClientMetadata",
@@ -162,9 +194,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminConfirmSignUpResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminCreateUserConfigType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -181,6 +221,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAdminCreateUserRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -229,6 +273,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminCreateUserResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"user" : @"User",
@@ -243,6 +291,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminDeleteUserAttributesRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"userAttributeNames" : @"UserAttributeNames",
@@ -255,9 +307,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminDeleteUserAttributesResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminDeleteUserRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -269,6 +329,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAdminDisableProviderForUserRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -285,9 +349,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminDisableProviderForUserResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminDisableUserRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -300,9 +372,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminDisableUserResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminEnableUserRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -315,9 +395,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminEnableUserResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminForgetDeviceRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -331,6 +419,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminGetDeviceRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"deviceKey" : @"DeviceKey",
@@ -342,6 +434,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAdminGetDeviceResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -357,6 +453,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminGetUserRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"userPoolId" : @"UserPoolId",
@@ -367,6 +467,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAdminGetUserResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -456,6 +560,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminInitiateAuthRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"analyticsMetadata" : @"AnalyticsMetadata",
@@ -525,6 +633,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAdminInitiateAuthResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -604,6 +716,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminLinkProviderForUserRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"destinationUser" : @"DestinationUser",
@@ -624,9 +740,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminLinkProviderForUserResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminListDevicesRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -640,6 +764,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAdminListDevicesResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -656,6 +784,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminListGroupsForUserRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"limit" : @"Limit",
@@ -668,6 +800,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAdminListGroupsForUserResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -684,6 +820,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminListUserAuthEventsRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"maxResults" : @"MaxResults",
@@ -696,6 +836,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAdminListUserAuthEventsResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -712,6 +856,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminRemoveUserFromGroupRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"groupName" : @"GroupName",
@@ -723,6 +871,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAdminResetUserPasswordRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -736,9 +888,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminResetUserPasswordResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminRespondToAuthChallengeRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -826,6 +986,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminRespondToAuthChallengeResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"authenticationResult" : @"AuthenticationResult",
@@ -904,6 +1068,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminSetUserMFAPreferenceRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"SMSMfaSettings" : @"SMSMfaSettings",
@@ -925,9 +1093,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminSetUserMFAPreferenceResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminSetUserPasswordRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -942,9 +1118,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminSetUserPasswordResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminSetUserSettingsRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -962,9 +1146,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminSetUserSettingsResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminUpdateAuthEventFeedbackRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1000,9 +1192,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminUpdateAuthEventFeedbackResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminUpdateDeviceStatusRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1038,9 +1238,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminUpdateDeviceStatusResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1059,9 +1267,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminUpdateUserAttributesResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAdminUserGlobalSignOutRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1074,12 +1290,21 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAdminUserGlobalSignOutResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderAnalyticsConfigurationType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
+             @"applicationArn" : @"ApplicationArn",
              @"applicationId" : @"ApplicationId",
              @"externalId" : @"ExternalId",
              @"roleArn" : @"RoleArn",
@@ -1091,6 +1316,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAnalyticsMetadataType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"analyticsEndpointId" : @"AnalyticsEndpointId",
@@ -1100,6 +1329,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAssociateSoftwareTokenRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1112,6 +1345,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAssociateSoftwareTokenResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"secretCode" : @"SecretCode",
@@ -1123,6 +1360,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAttributeType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"name" : @"Name",
@@ -1133,6 +1374,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderAuthEventType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1222,6 +1467,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderAuthenticationResultType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -1240,6 +1489,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderChallengeResponseType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1294,6 +1547,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderChangePasswordRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -1306,9 +1563,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderChangePasswordResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderCodeDeliveryDetailsType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1343,6 +1608,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCompromisedCredentialsActionsType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"eventAction" : @"EventAction",
@@ -1374,6 +1643,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCompromisedCredentialsRiskConfigurationType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"actions" : @"Actions",
@@ -1388,6 +1661,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderConfirmDeviceRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1406,6 +1683,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderConfirmDeviceResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"userConfirmationNecessary" : @"UserConfirmationNecessary",
@@ -1415,6 +1696,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderConfirmForgotPasswordRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1441,9 +1726,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderConfirmForgotPasswordResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderConfirmSignUpRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1470,9 +1763,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderConfirmSignUpResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderContextDataType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1492,6 +1793,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCreateGroupRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"detail" : @"Description",
@@ -1506,6 +1811,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCreateGroupResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"group" : @"Group",
@@ -1519,6 +1828,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderCreateIdentityProviderRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1576,6 +1889,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCreateIdentityProviderResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"identityProvider" : @"IdentityProvider",
@@ -1589,6 +1906,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderCreateResourceServerRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1607,6 +1928,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCreateResourceServerResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"resourceServer" : @"ResourceServer",
@@ -1621,6 +1946,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCreateUserImportJobRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"cloudWatchLogsRoleArn" : @"CloudWatchLogsRoleArn",
@@ -1632,6 +1961,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderCreateUserImportJobResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1647,8 +1980,13 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCreateUserPoolClientRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
+             @"accessTokenValidity" : @"AccessTokenValidity",
              @"allowedOAuthFlows" : @"AllowedOAuthFlows",
              @"allowedOAuthFlowsUserPoolClient" : @"AllowedOAuthFlowsUserPoolClient",
              @"allowedOAuthScopes" : @"AllowedOAuthScopes",
@@ -1658,11 +1996,13 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
              @"defaultRedirectURI" : @"DefaultRedirectURI",
              @"explicitAuthFlows" : @"ExplicitAuthFlows",
              @"generateSecret" : @"GenerateSecret",
+             @"idTokenValidity" : @"IdTokenValidity",
              @"logoutURLs" : @"LogoutURLs",
              @"preventUserExistenceErrors" : @"PreventUserExistenceErrors",
              @"readAttributes" : @"ReadAttributes",
              @"refreshTokenValidity" : @"RefreshTokenValidity",
              @"supportedIdentityProviders" : @"SupportedIdentityProviders",
+             @"tokenValidityUnits" : @"TokenValidityUnits",
              @"userPoolId" : @"UserPoolId",
              @"writeAttributes" : @"WriteAttributes",
              };
@@ -1693,9 +2033,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
     }];
 }
 
++ (NSValueTransformer *)tokenValidityUnitsJSONTransformer {
+    return [NSValueTransformer awsmtl_JSONDictionaryTransformerWithModelClass:[AWSCognitoIdentityProviderTokenValidityUnitsType class]];
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderCreateUserPoolClientResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1710,6 +2058,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderCreateUserPoolDomainRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1727,6 +2079,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCreateUserPoolDomainResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"cloudFrontDomain" : @"CloudFrontDomain",
@@ -1736,6 +2092,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderCreateUserPoolRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1758,6 +2118,7 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
              @"userPoolAddOns" : @"UserPoolAddOns",
              @"userPoolTags" : @"UserPoolTags",
              @"usernameAttributes" : @"UsernameAttributes",
+             @"usernameConfiguration" : @"UsernameConfiguration",
              @"verificationMessageTemplate" : @"VerificationMessageTemplate",
              };
 }
@@ -1824,6 +2185,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
     return [NSValueTransformer awsmtl_JSONDictionaryTransformerWithModelClass:[AWSCognitoIdentityProviderUserPoolAddOnsType class]];
 }
 
++ (NSValueTransformer *)usernameConfigurationJSONTransformer {
+    return [NSValueTransformer awsmtl_JSONDictionaryTransformerWithModelClass:[AWSCognitoIdentityProviderUsernameConfigurationType class]];
+}
+
 + (NSValueTransformer *)verificationMessageTemplateJSONTransformer {
     return [NSValueTransformer awsmtl_JSONDictionaryTransformerWithModelClass:[AWSCognitoIdentityProviderVerificationMessageTemplateType class]];
 }
@@ -1831,6 +2196,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderCreateUserPoolResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1846,6 +2215,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderCustomDomainConfigType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"certificateArn" : @"CertificateArn",
@@ -1855,6 +2228,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDeleteGroupRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1867,6 +2244,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDeleteIdentityProviderRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"providerName" : @"ProviderName",
@@ -1877,6 +2258,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDeleteResourceServerRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1889,6 +2274,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDeleteUserAttributesRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -1900,9 +2289,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDeleteUserAttributesResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderDeleteUserPoolClientRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1915,6 +2312,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDeleteUserPoolDomainRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"domain" : @"Domain",
@@ -1926,9 +2327,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDeleteUserPoolDomainResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderDeleteUserPoolRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1940,6 +2349,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDeleteUserRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -1949,6 +2362,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDescribeIdentityProviderRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1960,6 +2377,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDescribeIdentityProviderResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -1975,6 +2396,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDescribeResourceServerRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"identifier" : @"Identifier",
@@ -1985,6 +2410,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDescribeResourceServerResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2000,6 +2429,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDescribeRiskConfigurationRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"clientId" : @"ClientId",
@@ -2010,6 +2443,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDescribeRiskConfigurationResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2025,6 +2462,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDescribeUserImportJobRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"jobId" : @"JobId",
@@ -2035,6 +2476,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDescribeUserImportJobResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2050,6 +2495,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDescribeUserPoolClientRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"clientId" : @"ClientId",
@@ -2060,6 +2509,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDescribeUserPoolClientResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2075,6 +2528,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDescribeUserPoolDomainRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"domain" : @"Domain",
@@ -2084,6 +2541,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDescribeUserPoolDomainResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2099,6 +2560,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDescribeUserPoolRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"userPoolId" : @"UserPoolId",
@@ -2108,6 +2573,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDescribeUserPoolResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2123,6 +2592,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDeviceConfigurationType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"challengeRequiredOnNewDevice" : @"ChallengeRequiredOnNewDevice",
@@ -2134,6 +2607,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderDeviceSecretVerifierConfigType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"passwordVerifier" : @"PasswordVerifier",
@@ -2144,6 +2621,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDeviceType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2186,6 +2667,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderDomainDescriptionType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2244,6 +2729,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderEmailConfigurationType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"configurationSet" : @"ConfigurationSet",
@@ -2279,6 +2768,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderEventContextDataType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"city" : @"City",
@@ -2292,6 +2785,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderEventFeedbackType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2334,8 +2831,13 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderEventRiskType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
+             @"compromisedCredentialsDetected" : @"CompromisedCredentialsDetected",
              @"riskDecision" : @"RiskDecision",
              @"riskLevel" : @"RiskLevel",
              };
@@ -2397,6 +2899,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderForgetDeviceRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -2407,6 +2913,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderForgotPasswordRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2431,6 +2941,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderForgotPasswordResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"codeDeliveryDetails" : @"CodeDeliveryDetails",
@@ -2445,6 +2959,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGetCSVHeaderRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"userPoolId" : @"UserPoolId",
@@ -2454,6 +2972,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderGetCSVHeaderResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2466,6 +2988,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGetDeviceRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -2476,6 +3002,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderGetDeviceResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2491,6 +3021,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGetGroupRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"groupName" : @"GroupName",
@@ -2501,6 +3035,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderGetGroupResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2516,6 +3054,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGetIdentityProviderByIdentifierRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"idpIdentifier" : @"IdpIdentifier",
@@ -2526,6 +3068,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderGetIdentityProviderByIdentifierResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2541,6 +3087,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGetSigningCertificateRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"userPoolId" : @"UserPoolId",
@@ -2550,6 +3100,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderGetSigningCertificateResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2561,6 +3115,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGetUICustomizationRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"clientId" : @"ClientId",
@@ -2571,6 +3129,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderGetUICustomizationResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2586,6 +3148,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGetUserAttributeVerificationCodeRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -2597,6 +3163,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderGetUserAttributeVerificationCodeResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2612,6 +3182,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGetUserPoolMfaConfigRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"userPoolId" : @"UserPoolId",
@@ -2621,6 +3195,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderGetUserPoolMfaConfigResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2668,6 +3246,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGetUserRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -2677,6 +3259,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderGetUserResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2700,6 +3286,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGlobalSignOutRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -2710,9 +3300,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderGlobalSignOutResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderGroupType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2746,6 +3344,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderHttpHeader
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"headerName" : @"headerName",
@@ -2756,6 +3358,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderIdentityProviderType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2831,6 +3437,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderInitiateAuthRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"analyticsMetadata" : @"AnalyticsMetadata",
@@ -2899,6 +3509,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderInitiateAuthResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -2978,6 +3592,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderLambdaConfigType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"createAuthChallenge" : @"CreateAuthChallenge",
@@ -2997,6 +3615,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListDevicesRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -3008,6 +3630,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListDevicesResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3024,6 +3650,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListGroupsRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"limit" : @"Limit",
@@ -3035,6 +3665,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListGroupsResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3051,6 +3685,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListIdentityProvidersRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"maxResults" : @"MaxResults",
@@ -3062,6 +3700,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListIdentityProvidersResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3078,6 +3720,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListResourceServersRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"maxResults" : @"MaxResults",
@@ -3089,6 +3735,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListResourceServersResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3105,6 +3755,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListTagsForResourceRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"resourceArn" : @"ResourceArn",
@@ -3115,6 +3769,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListTagsForResourceResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"tags" : @"Tags",
@@ -3124,6 +3782,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListUserImportJobsRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3136,6 +3798,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListUserImportJobsResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3152,6 +3818,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListUserPoolClientsRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"maxResults" : @"MaxResults",
@@ -3163,6 +3833,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListUserPoolClientsResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3179,6 +3853,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListUserPoolsRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"maxResults" : @"MaxResults",
@@ -3189,6 +3867,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListUserPoolsResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3205,6 +3887,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListUsersInGroupRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"groupName" : @"GroupName",
@@ -3217,6 +3903,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListUsersInGroupResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3233,6 +3923,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderListUsersRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"attributesToGet" : @"AttributesToGet",
@@ -3246,6 +3940,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderListUsersResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3261,6 +3959,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderMFAOptionType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3294,6 +3996,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderMessageTemplateType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"emailMessage" : @"EmailMessage",
@@ -3306,6 +4012,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderLatestDeviceMetadataType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"deviceGroupKey" : @"DeviceGroupKey",
@@ -3316,6 +4026,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderNotifyConfigurationType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3344,6 +4058,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderNotifyEmailType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"htmlBody" : @"HtmlBody",
@@ -3356,6 +4074,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderNumberAttributeConstraintsType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"maxValue" : @"MaxValue",
@@ -3366,6 +4088,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderPasswordPolicyType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3381,6 +4107,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderProviderDescription
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3452,6 +4182,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderProviderUserIdentifierType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"providerAttributeName" : @"ProviderAttributeName",
@@ -3463,6 +4197,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderRecoveryOptionType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3501,6 +4239,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderResendConfirmationCodeRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"analyticsMetadata" : @"AnalyticsMetadata",
@@ -3524,6 +4266,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderResendConfirmationCodeResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"codeDeliveryDetails" : @"CodeDeliveryDetails",
@@ -3538,6 +4284,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderResourceServerScopeType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"scopeDescription" : @"ScopeDescription",
@@ -3548,6 +4298,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderResourceServerType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3565,6 +4319,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderRespondToAuthChallengeRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3651,6 +4409,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderRespondToAuthChallengeResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"authenticationResult" : @"AuthenticationResult",
@@ -3729,6 +4491,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderRiskConfigurationType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accountTakeoverRiskConfiguration" : @"AccountTakeoverRiskConfiguration",
@@ -3764,6 +4530,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderRiskExceptionConfigurationType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"blockedIPRangeList" : @"BlockedIPRangeList",
@@ -3775,6 +4545,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSMSMfaSettingsType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"enabled" : @"Enabled",
@@ -3785,6 +4559,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderSchemaAttributeType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3841,6 +4619,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSetRiskConfigurationRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accountTakeoverRiskConfiguration" : @"AccountTakeoverRiskConfiguration",
@@ -3867,6 +4649,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSetRiskConfigurationResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"riskConfiguration" : @"RiskConfiguration",
@@ -3881,6 +4667,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSetUICustomizationRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"CSS" : @"CSS",
@@ -3893,6 +4683,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderSetUICustomizationResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3907,6 +4701,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderSetUserMFAPreferenceRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3928,9 +4726,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSetUserMFAPreferenceResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderSetUserPoolMfaConfigRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -3979,6 +4785,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSetUserPoolMfaConfigResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"mfaConfiguration" : @"MfaConfiguration",
@@ -4025,6 +4835,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSetUserSettingsRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -4040,9 +4854,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSetUserSettingsResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderSignUpRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4078,6 +4900,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSignUpResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"codeDeliveryDetails" : @"CodeDeliveryDetails",
@@ -4094,6 +4920,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSmsConfigurationType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"externalId" : @"ExternalId",
@@ -4104,6 +4934,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderSmsMfaConfigType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4120,6 +4954,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderSoftwareTokenMfaConfigType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"enabled" : @"Enabled",
@@ -4129,6 +4967,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderSoftwareTokenMfaSettingsType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4141,6 +4983,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderStartUserImportJobRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"jobId" : @"JobId",
@@ -4151,6 +4997,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderStartUserImportJobResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4166,6 +5016,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderStopUserImportJobRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"jobId" : @"JobId",
@@ -4176,6 +5030,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderStopUserImportJobResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4191,6 +5049,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderStringAttributeConstraintsType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"maxLength" : @"MaxLength",
@@ -4201,6 +5063,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderTagResourceRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4213,9 +5079,126 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderTagResourceResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
+@end
+
+@implementation AWSCognitoIdentityProviderTokenValidityUnitsType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+	return @{
+             @"accessToken" : @"AccessToken",
+             @"idToken" : @"IdToken",
+             @"refreshToken" : @"RefreshToken",
+             };
+}
+
++ (NSValueTransformer *)accessTokenJSONTransformer {
+    return [AWSMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value) {
+        if ([value caseInsensitiveCompare:@"seconds"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeSeconds);
+        }
+        if ([value caseInsensitiveCompare:@"minutes"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeMinutes);
+        }
+        if ([value caseInsensitiveCompare:@"hours"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeHours);
+        }
+        if ([value caseInsensitiveCompare:@"days"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeDays);
+        }
+        return @(AWSCognitoIdentityProviderTimeUnitsTypeUnknown);
+    } reverseBlock:^NSString *(NSNumber *value) {
+        switch ([value integerValue]) {
+            case AWSCognitoIdentityProviderTimeUnitsTypeSeconds:
+                return @"seconds";
+            case AWSCognitoIdentityProviderTimeUnitsTypeMinutes:
+                return @"minutes";
+            case AWSCognitoIdentityProviderTimeUnitsTypeHours:
+                return @"hours";
+            case AWSCognitoIdentityProviderTimeUnitsTypeDays:
+                return @"days";
+            default:
+                return nil;
+        }
+    }];
+}
+
++ (NSValueTransformer *)idTokenJSONTransformer {
+    return [AWSMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value) {
+        if ([value caseInsensitiveCompare:@"seconds"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeSeconds);
+        }
+        if ([value caseInsensitiveCompare:@"minutes"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeMinutes);
+        }
+        if ([value caseInsensitiveCompare:@"hours"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeHours);
+        }
+        if ([value caseInsensitiveCompare:@"days"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeDays);
+        }
+        return @(AWSCognitoIdentityProviderTimeUnitsTypeUnknown);
+    } reverseBlock:^NSString *(NSNumber *value) {
+        switch ([value integerValue]) {
+            case AWSCognitoIdentityProviderTimeUnitsTypeSeconds:
+                return @"seconds";
+            case AWSCognitoIdentityProviderTimeUnitsTypeMinutes:
+                return @"minutes";
+            case AWSCognitoIdentityProviderTimeUnitsTypeHours:
+                return @"hours";
+            case AWSCognitoIdentityProviderTimeUnitsTypeDays:
+                return @"days";
+            default:
+                return nil;
+        }
+    }];
+}
+
++ (NSValueTransformer *)refreshTokenJSONTransformer {
+    return [AWSMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value) {
+        if ([value caseInsensitiveCompare:@"seconds"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeSeconds);
+        }
+        if ([value caseInsensitiveCompare:@"minutes"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeMinutes);
+        }
+        if ([value caseInsensitiveCompare:@"hours"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeHours);
+        }
+        if ([value caseInsensitiveCompare:@"days"] == NSOrderedSame) {
+            return @(AWSCognitoIdentityProviderTimeUnitsTypeDays);
+        }
+        return @(AWSCognitoIdentityProviderTimeUnitsTypeUnknown);
+    } reverseBlock:^NSString *(NSNumber *value) {
+        switch ([value integerValue]) {
+            case AWSCognitoIdentityProviderTimeUnitsTypeSeconds:
+                return @"seconds";
+            case AWSCognitoIdentityProviderTimeUnitsTypeMinutes:
+                return @"minutes";
+            case AWSCognitoIdentityProviderTimeUnitsTypeHours:
+                return @"hours";
+            case AWSCognitoIdentityProviderTimeUnitsTypeDays:
+                return @"days";
+            default:
+                return nil;
+        }
+    }];
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderUICustomizationType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4249,6 +5232,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUntagResourceRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"resourceArn" : @"ResourceArn",
@@ -4260,9 +5247,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUntagResourceResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderUpdateAuthEventFeedbackRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4299,9 +5294,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUpdateAuthEventFeedbackResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderUpdateDeviceStatusRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4336,9 +5339,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUpdateDeviceStatusResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderUpdateGroupRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4354,6 +5365,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUpdateGroupResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"group" : @"Group",
@@ -4367,6 +5382,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderUpdateIdentityProviderRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4382,6 +5401,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUpdateIdentityProviderResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"identityProvider" : @"IdentityProvider",
@@ -4395,6 +5418,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderUpdateResourceServerRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4413,6 +5440,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUpdateResourceServerResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"resourceServer" : @"ResourceServer",
@@ -4426,6 +5457,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderUpdateUserAttributesRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4443,6 +5478,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUpdateUserAttributesResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"codeDeliveryDetailsList" : @"CodeDeliveryDetailsList",
@@ -4457,8 +5496,13 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUpdateUserPoolClientRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
+             @"accessTokenValidity" : @"AccessTokenValidity",
              @"allowedOAuthFlows" : @"AllowedOAuthFlows",
              @"allowedOAuthFlowsUserPoolClient" : @"AllowedOAuthFlowsUserPoolClient",
              @"allowedOAuthScopes" : @"AllowedOAuthScopes",
@@ -4468,11 +5512,13 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
              @"clientName" : @"ClientName",
              @"defaultRedirectURI" : @"DefaultRedirectURI",
              @"explicitAuthFlows" : @"ExplicitAuthFlows",
+             @"idTokenValidity" : @"IdTokenValidity",
              @"logoutURLs" : @"LogoutURLs",
              @"preventUserExistenceErrors" : @"PreventUserExistenceErrors",
              @"readAttributes" : @"ReadAttributes",
              @"refreshTokenValidity" : @"RefreshTokenValidity",
              @"supportedIdentityProviders" : @"SupportedIdentityProviders",
+             @"tokenValidityUnits" : @"TokenValidityUnits",
              @"userPoolId" : @"UserPoolId",
              @"writeAttributes" : @"WriteAttributes",
              };
@@ -4503,9 +5549,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
     }];
 }
 
++ (NSValueTransformer *)tokenValidityUnitsJSONTransformer {
+    return [NSValueTransformer awsmtl_JSONDictionaryTransformerWithModelClass:[AWSCognitoIdentityProviderTokenValidityUnitsType class]];
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderUpdateUserPoolClientResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4520,6 +5574,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderUpdateUserPoolDomainRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4537,6 +5595,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUpdateUserPoolDomainResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"cloudFrontDomain" : @"CloudFrontDomain",
@@ -4546,6 +5608,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderUpdateUserPoolRequest
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4635,9 +5701,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUpdateUserPoolResponse
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderUserContextDataType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4648,6 +5722,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderUserImportJobType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4746,6 +5824,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUserPoolAddOnsType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"advancedSecurityMode" : @"AdvancedSecurityMode",
@@ -4782,6 +5864,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUserPoolClientDescription
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"clientId" : @"ClientId",
@@ -4794,8 +5880,13 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUserPoolClientType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
+             @"accessTokenValidity" : @"AccessTokenValidity",
              @"allowedOAuthFlows" : @"AllowedOAuthFlows",
              @"allowedOAuthFlowsUserPoolClient" : @"AllowedOAuthFlowsUserPoolClient",
              @"allowedOAuthScopes" : @"AllowedOAuthScopes",
@@ -4807,12 +5898,14 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
              @"creationDate" : @"CreationDate",
              @"defaultRedirectURI" : @"DefaultRedirectURI",
              @"explicitAuthFlows" : @"ExplicitAuthFlows",
+             @"idTokenValidity" : @"IdTokenValidity",
              @"lastModifiedDate" : @"LastModifiedDate",
              @"logoutURLs" : @"LogoutURLs",
              @"preventUserExistenceErrors" : @"PreventUserExistenceErrors",
              @"readAttributes" : @"ReadAttributes",
              @"refreshTokenValidity" : @"RefreshTokenValidity",
              @"supportedIdentityProviders" : @"SupportedIdentityProviders",
+             @"tokenValidityUnits" : @"TokenValidityUnits",
              @"userPoolId" : @"UserPoolId",
              @"writeAttributes" : @"WriteAttributes",
              };
@@ -4859,9 +5952,17 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
     }];
 }
 
++ (NSValueTransformer *)tokenValidityUnitsJSONTransformer {
+    return [NSValueTransformer awsmtl_JSONDictionaryTransformerWithModelClass:[AWSCognitoIdentityProviderTokenValidityUnitsType class]];
+}
+
 @end
 
 @implementation AWSCognitoIdentityProviderUserPoolDescriptionType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4919,6 +6020,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderUserPoolPolicyType
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"passwordPolicy" : @"PasswordPolicy",
@@ -4932,6 +6037,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderUserPoolType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -4964,6 +6073,7 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
              @"userPoolAddOns" : @"UserPoolAddOns",
              @"userPoolTags" : @"UserPoolTags",
              @"usernameAttributes" : @"UsernameAttributes",
+             @"usernameConfiguration" : @"UsernameConfiguration",
              @"verificationMessageTemplate" : @"VerificationMessageTemplate",
              };
 }
@@ -5067,6 +6177,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
     return [NSValueTransformer awsmtl_JSONDictionaryTransformerWithModelClass:[AWSCognitoIdentityProviderUserPoolAddOnsType class]];
 }
 
++ (NSValueTransformer *)usernameConfigurationJSONTransformer {
+    return [NSValueTransformer awsmtl_JSONDictionaryTransformerWithModelClass:[AWSCognitoIdentityProviderUsernameConfigurationType class]];
+}
+
 + (NSValueTransformer *)verificationMessageTemplateJSONTransformer {
     return [NSValueTransformer awsmtl_JSONDictionaryTransformerWithModelClass:[AWSCognitoIdentityProviderVerificationMessageTemplateType class]];
 }
@@ -5074,6 +6188,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderUserType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -5159,7 +6277,25 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @end
 
+@implementation AWSCognitoIdentityProviderUsernameConfigurationType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+	return @{
+             @"caseSensitive" : @"CaseSensitive",
+             };
+}
+
+@end
+
 @implementation AWSCognitoIdentityProviderVerificationMessageTemplateType
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -5197,6 +6333,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderVerifySoftwareTokenRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -5209,6 +6349,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderVerifySoftwareTokenResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
@@ -5242,6 +6386,10 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 
 @implementation AWSCognitoIdentityProviderVerifyUserAttributeRequest
 
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"accessToken" : @"AccessToken",
@@ -5253,5 +6401,9 @@ NSString *const AWSCognitoIdentityProviderErrorDomain = @"com.amazonaws.AWSCogni
 @end
 
 @implementation AWSCognitoIdentityProviderVerifyUserAttributeResponse
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
 
 @end

@@ -10,6 +10,7 @@ target "AWSAppSync" do
   pod "SQLite.swift", "~> 0.12.2"
   pod "ReachabilitySwift", "~> 5.0.0"
   pod "AppSyncRealTimeClient", "~> 3.1.0"
+  pod "SwiftLint"
 end
 
 target "AWSAppSyncTestCommon" do
