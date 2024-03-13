@@ -18,7 +18,7 @@ target "AWSAppSyncTestCommon" do
   pod "ReachabilitySwift", "~> 5.0.0"
   # We directly access a database connection to verify certain initialization
   # setups
-  pod "SQLite.swift", "~> 0.12.2"
+  pod 'SQLiteSC.swift', :git => 'https://github.com/wingwarp/SQLiteSC.swift.git', :branch => 'master' # :tag => '3.0.3'
   pod "AppSyncRealTimeClient", "~> 3.1.0"
 end
 
