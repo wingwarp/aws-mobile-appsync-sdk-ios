@@ -9,7 +9,7 @@ AWS_SDK_VERSION = "2.18.0"
 
 target "AWSAppSync" do
   pod "AWSCore", "~> #{AWS_SDK_VERSION}"
-  pod 'SQLiteSC.swift', :git => 'https://github.com/wingwarp/SQLiteSC.swift.git', :tag => '3.0.3' # :branch => 'master'
+  pod 'SQLiteSC.swift', :git => 'https://github.com/wingwarp/SQLiteSC.swift.git', :tag => '3.0.4' # :branch => 'master'
   pod "ReachabilitySwift", "~> 5.0.0"
   pod "AppSyncRealTimeClient", "~> 3.1.0"
   pod "SwiftLint"
@@ -20,7 +20,7 @@ target "AWSAppSyncTestCommon" do
   pod "ReachabilitySwift", "~> 5.0.0"
   # We directly access a database connection to verify certain initialization
   # setups
-  pod 'SQLiteSC.swift', :git => 'https://github.com/wingwarp/SQLiteSC.swift.git', :tag => '3.0.3' # :branch => 'master'
+  pod 'SQLiteSC.swift', :git => 'https://github.com/wingwarp/SQLiteSC.swift.git', :tag => '3.0.4' # :branch => 'master'
   pod "AppSyncRealTimeClient", "~> 3.1.0"
 end
 

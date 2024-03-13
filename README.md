@@ -1,3 +1,8 @@
+Updated to depend on SQLiteSC instead of SQLite due to conflict with private Apple framework LinkServices.framework.
+Had a bunch of problems integrating SQLiteSC into AWSAppSync because AWSAppSync's podspec needs to point to its private framework.
+Turns out podspec files don't have way to indicate a private source.
+Ultimately, I fixed by adding SQLiteSC pod to FullCourt.ai (ProjectMomenta) Podfile. I guess Cocoapods sees that AWSAppSync shares the same dependency and uses our Podfile's definition to grap SQLiteSC.
+
 AWS AppSync SDK for iOS
 =======================
 

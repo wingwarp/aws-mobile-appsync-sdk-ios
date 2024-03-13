@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.1'
 
   s.dependency 'AWSCore', '~> 2.18.0'
-  s.dependency 'SQLiteSC.swift', '3.0.3'
+  s.dependency 'SQLiteSC.swift', '3.0.4'
   s.dependency 'ReachabilitySwift', '~> 5.0.0'
   s.dependency 'AppSyncRealTimeClient', '~> 3.1.0'
 
