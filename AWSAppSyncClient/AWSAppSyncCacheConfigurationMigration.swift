@@ -5,7 +5,7 @@
 //
 
 import Foundation
-import SQLite
+import SQLiteSC
 
 @available(*, deprecated, message: "This utility will be removed when the databaseURL parameter is removed from AWSAppSyncClientConfiguration")
 public struct AWSAppSyncCacheConfigurationMigration {

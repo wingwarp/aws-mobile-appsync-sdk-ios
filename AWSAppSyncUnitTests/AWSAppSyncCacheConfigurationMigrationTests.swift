@@ -8,7 +8,7 @@ import XCTest
 
 @testable import AWSAppSync
 @testable import AWSAppSyncTestCommon
-import SQLite
+import SQLiteSC
 
 @available(*, deprecated, message: "These tests will be removed when the databaseURL parameter is removed from AWSAppSyncClientConfiguration")
 class AWSAppSyncCacheConfigurationMigrationTests: XCTestCase {

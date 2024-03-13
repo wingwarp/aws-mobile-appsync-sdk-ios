@@ -5,7 +5,7 @@
 //
 
 import Foundation
-import SQLite
+import SQLiteSC
 
 final class SQLiteSerialization {
     private static let serializedReferenceKey = "$reference"

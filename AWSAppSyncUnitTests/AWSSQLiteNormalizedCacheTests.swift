@@ -7,7 +7,7 @@
 import XCTest
 @testable import AWSAppSync
 @testable import AWSAppSyncTestCommon
-import SQLite
+import SQLiteSC
 
 // This class only tests a few high-level operations like database setup. For more
 // detailed behavior tests, see appropriate tests in the ApolloTests suites.
