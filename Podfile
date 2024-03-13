@@ -3,6 +3,8 @@ platform :ios, "9.0"
 use_frameworks!
 inhibit_all_warnings!
 
+source 'https://github.com/wingwarp/SQLiteSC.swift.git'
+
 AWS_SDK_VERSION = "2.18.0"
 
 target "AWSAppSync" do
