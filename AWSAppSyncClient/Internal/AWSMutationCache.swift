@@ -13,17 +13,17 @@ public final class AWSMutationCache {
 
     private let db: Connection
     private let mutationRecords = Table("mutation_records")
-    private let id = Expression<Int64>("_id")
-    private let recordIdentifier = Expression<CacheKey>("recordIdentifier")
-    private let data = Expression<Data>("data")
-    private let recordState = Expression<String>("recordState")
-    private let timestamp = Expression<Date>("timestamp")
-    private let s3Bucket = Expression<String?>("s3Bucket")
-    private let s3Key = Expression<String?>("s3Key")
-    private let s3Region = Expression<String?>("s3Region")
-    private let s3LocalUri = Expression<String?>("s3LocalUri")
-    private let s3MimeType = Expression<String?>("s3MimeType")
-    private let operationString = Expression<String>("operationString")
+    private let id = SQLiteSC.Expression<Int64>("_id")
+    private let recordIdentifier = SQLiteSC.Expression<CacheKey>("recordIdentifier")
+    private let data = SQLiteSC.Expression<Data>("data")
+    private let recordState = SQLiteSC.Expression<String>("recordState")
+    private let timestamp = SQLiteSC.Expression<Date>("timestamp")
+    private let s3Bucket = SQLiteSC.Expression<String?>("s3Bucket")
+    private let s3Key = SQLiteSC.Expression<String?>("s3Key")
+    private let s3Region = SQLiteSC.Expression<String?>("s3Region")
+    private let s3LocalUri = SQLiteSC.Expression<String?>("s3LocalUri")
+    private let s3MimeType = SQLiteSC.Expression<String?>("s3MimeType")
+    private let operationString = SQLiteSC.Expression<String>("operationString")
 
     public init(fileURL: URL) throws {
         AppSyncLog.verbose("Initializing mutation cache at \(fileURL.absoluteString)")
